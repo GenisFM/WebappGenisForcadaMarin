@@ -3,8 +3,7 @@ html {
 }
 body {
     display: flex;
-    flex-direction: row;
-    flex-flow: row-reverse;
+    flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     min-height: 100svh;
@@ -14,7 +13,7 @@ body {
     background-color: #1592E6;
 }
 #superior {
-    display: none;
+    display: flex;
     height: 8vmax;
     justify-content: center;
     align-items: center;
@@ -51,10 +50,8 @@ body {
     font-size: 2vmax;
 }
 #menu {
-    flex-direction: column;
-    width: 8vmax;
     display: flex;
-    height: auto;
+    height: 8vmax;
 }
 #menu i{
     flex: 1;
@@ -62,6 +59,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    background-color: #950E17;
     background-color: #000000;
     font-size: 5vmax;
     cursor: pointer;
