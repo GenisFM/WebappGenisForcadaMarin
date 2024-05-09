@@ -31,6 +31,24 @@ body {
     align-items: center;
     font-size: 4vmax;
 }
+#seccio_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vmax;
+}
+#seccio_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vmax;
+}
+#seccio_4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vmax;
+}
 #menu {
  height: 8vmax;
 }
