@@ -21,7 +21,7 @@ body {
     color: white;
     background-color: #950E17;
 }
-.seccio {
+#seccio {
     flex: 1;
     display: none;
 }
