@@ -3,7 +3,8 @@ html {
 }
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: row-reverse;
     justify-content: space-between;
     min-height: 100vh;
     min-height: 100svh;
@@ -13,7 +14,7 @@ body {
     background-color: #1592E6;
 }
 #superior {
-    display: flex;
+    display: none;
     height: 8vmax;
     justify-content: center;
     align-items: center;
@@ -50,8 +51,10 @@ body {
     font-size: 2vmax;
 }
 #menu {
+    flex-direction: column;
+    width: 8vmax;
     display: flex;
-    height: 8vmax;
+    height: auto;
 }
 #menu i{
     flex: 1;
