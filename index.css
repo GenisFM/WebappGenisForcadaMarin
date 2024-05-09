@@ -50,5 +50,16 @@ body {
     font-size: 2vmax;
 }
 #menu {
- height: 8vmax;
+    display: flex;
+    height: 8vmax;
+}
+#menu i{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #950E17;
+    font-size: 5vmax;
+    cursor: pointer;
 }
