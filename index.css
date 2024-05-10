@@ -171,6 +171,18 @@ body {
     #superior {
         display: none;  
     }
+    #seccio_1 {
+        display: none;  
+    }
+    #seccio_2 {
+        display: none;  
+    }
+    #seccio_3 {
+        display: none;  
+    }
+    #seccio_4 {
+        display: none;  
+    }
     #menu {
         flex-direction: column;
         width: 8vmax;
