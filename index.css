@@ -35,7 +35,7 @@ body {
 #credencials {
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: center;
     font-size: 3vmax;
     margin: 5vmin;
 }
