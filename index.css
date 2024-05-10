@@ -167,6 +167,20 @@ body {
         height: 70vmin;
     }
 }
+#webcam-container {
+    margin: 2vh;
+}
+#reconeixement {
+    text-align:center;
+}
+#coincidencia {
+    display: none;    /* es farà visible quan es comencin a tenir dades */
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+#prediccions {
+    font-size: 3vh;
+}
 #menu {
     display: flex;
     height: 8vmax;
@@ -195,6 +209,9 @@ body {
     }
     #seccio_2 {
         display: none;  
+    }
+    #seccio_8 {
+        flex-direction: row;
     }
     #menu {
         flex-direction: column;
