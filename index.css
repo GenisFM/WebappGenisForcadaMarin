@@ -39,18 +39,18 @@ body {
     font-size: 3vmax;
     margin: 5vmin;
 }
-#credencials div {    /* els 2 <div> dins de credencials */
+#credencials div {    
     margin-bottom: 1vmin;
 }
-#credencials input {    /* els 2 quadres de text dins de credencials */
-    max-width: 20vmax;    /* es limita l'espai que ocupen els quadres de text */
+#credencials input {    
+    max-width: 20vmax;    
     font-size: 3vmax;
 }
 #botons_sessio {
     display: flex;
     align-items: center;
 }
-#botons_sessio button {    /* els 2 botons dins de botons_sessio */
+#botons_sessio button {    
     font-size: 3vmax;
     padding: 2vmin;
     margin: 1vmin;
@@ -90,7 +90,7 @@ body {
     color: #950E17;
 }
 #foto {
-    max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
+    max-width: 60vmin;    
     max-height: 60vmin;
     cursor: pointer;
 }
@@ -145,7 +145,7 @@ body {
         max-height: 100svh;
     }
     #foto_gran {
-        transform: rotate(-90deg);    /* gir de 90 graus correponent al canvi d'orientació */
+        transform: rotate(-90deg);    
     }
 }
 #menu {
@@ -165,15 +165,15 @@ body {
 }
 @media (orientation: landscape) {
     body {
-        flex-direction: row;    /* sobreescriu la declaració flex-direction: column; */
-        flex-flow: row-reverse;    /* disposició de dreta a esquerra, per mostrar el menú a l'esquerra */
+        flex-direction: row;    
+        flex-flow: row-reverse;    
     }
     #superior {
-        display: none;    /* franja superior oculta per optimitzar l'espai */
+        display: none;  
     }
     #menu {
         flex-direction: column;
         width: 8vmax;
-        height: auto;    /* sobreescriu la declaració height: 8vmax; */
+        height: auto;    
     }
 }
