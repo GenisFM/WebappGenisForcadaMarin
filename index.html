@@ -49,15 +49,19 @@
     <div id="seccio_5" class="seccio">
       <div id="div_foto">
         <img id="foto">
-        <i id="icona_camera" class="fa-solid fa-image"></i>    <!-- icona que ocupa l'espai quan encara no s'ha fet la foto -->
+        <i id="icona_camera" class="fa-solid fa-image"></i>
       </div>
-      <div id="div_control">    <!-- contenidor dels botons per fer i desar la foto -->
-          <label for="obturador">    <!-- etiqueta auxiliar per ocultar el botó predeterminat -->
-            <i class="fa-solid fa-circle-dot"></i>    <!-- icona del botó per fer la foto -->
+      <div id="div_control">
+          <label for="obturador">
+            <i class="fa-solid fa-circle-dot"></i>
           </label>
-          <input type="file" accept="image/*" id="obturador" capture="camera" /> <!-- element que captura la imatge -->
-          <i id="desa" class="fa-solid fa-check"></i>    <!-- icona del botó per desar la foto -->
+          <input type="file" accept="image/*" id="obturador" capture="camera" />
+          <i id="desa" class="fa-solid fa-check"></i>
       </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="div_gran">
+      <img id="foto_gran" />
     </div>
     <div id="menu">      
       <i id="boto_1" class="fa-solid fa-house"></i>     
