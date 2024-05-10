@@ -67,18 +67,6 @@ body {
     align-items: center;
     font-size: 2vmax;
 }
-#seccio_3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vmax;
-}
-#seccio_4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vmax;
-}
 #div_foto {
     flex: 1;
     display: flex;
@@ -206,12 +194,6 @@ body {
         display: none;  
     }
     #seccio_2 {
-        display: none;  
-    }
-    #seccio_3 {
-        display: none;  
-    }
-    #seccio_4 {
         display: none;  
     }
     #menu {
