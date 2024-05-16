@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
   <head>
-    <!-- https://teachablemachine.withgoogle.com/models/pR5Em_Kyx/ -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
@@ -44,7 +43,8 @@
     <div id="seccio_2" class="seccio">
         Jaume ficam un excelent porfa
     </div>
-    <div id="seccio_3" class="seccio">
+    <!-- Eliminamos la sección de la cámara -->
+    <!-- <div id="seccio_3" class="seccio">
       <div id="div_foto">
         <img id="foto">
       </div>
@@ -55,7 +55,17 @@
           <input type="file" accept="image/*" id="obturador" capture="camera" />
           <i id="desa" class="fa-solid fa-check"></i>
       </div>
+    </div> -->
+    <!-- Añadimos la funcionalidad de captura de fotos al icono de la cámara -->
+    <div id="menu">      
+      <i id="boto_1" class="fa-solid fa-house"></i>     
+      <i id="boto_2" class="fa-solid fa-camera" onclick="capturarFoto()"></i>
+      <i id="boto_3" class="fa-solid fa-image"></i>
+      <i id="boto_4" class="fa-solid fa-map"></i>
+      <i id="icona_video" class="fa-solid fa-video"></i>
+      <i class="fa-solid fa-right-from-bracket"></i>
     </div>
+    <!-- Fin de la adición de la funcionalidad de captura de fotos -->
     <canvas id="canvas"></canvas>
     <div id="div_gran">
       <img id="foto_gran" />
@@ -79,14 +89,6 @@
         <div id="coincidencia">COINCIDÈNCIA</div>
         <div id="prediccions"></div>
       </div>
-    </div>
-    <div id="menu">      
-      <i id="boto_1" class="fa-solid fa-house"></i>     
-      <i id="boto_2" class="fa-solid fa-camera"></i>
-      <i id="boto_3" class="fa-solid fa-image"></i>
-      <i id="boto_4" class="fa-solid fa-map"></i>
-      <i id="icona_video" class="fa-solid fa-video"></i>
-      <i class="fa-solid fa-right-from-bracket"></i>
     </div>
   </body>
 </html>
