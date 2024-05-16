@@ -185,7 +185,7 @@ body {
     #seccio_2 {
         display: none;  
     }
-    #seccio_8 {
+    #seccio_6 {
         flex-direction: row;
     }
     #menu {
@@ -193,7 +193,7 @@ body {
         width: 8vmax;
         height: auto;    
     }
-    #seccio_5 {
+    #seccio_3 {
         flex-direction: row;
     }
     #div_foto {
