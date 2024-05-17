@@ -33,10 +33,9 @@
           <input type="password" id="contrasenya">
         </div>
       </div>
-      <div id="botons_sessio"> 
-        <button>Inicia sessió</button>
-        <button>Nou usuari</button>
-      </div>         
+    <div id="botons_sessio">
+      <button onclick="inici_sessio()">Inicia sessió</button>
+      <button onclick="nou_usuari()">Nou usuari</button>       
     </div>
     <div id="seccio_1" class="seccio">
         Lorena la millor programadora
@@ -81,12 +80,12 @@
       </div>
     </div>
     <div id="menu">      
-      <i id="boto_1" class="fa-solid fa-house"></i>     
-      <i id="boto_2" class="fa-solid fa-camera"></i>
-      <i id="boto_3" class="fa-solid fa-image"></i>
-      <i id="boto_4" class="fa-solid fa-map"></i>
+      <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>     
+      <i id="boto_2" class="fa-solid fa-camera" onclick="canvia_seccio(2)"></i>
+      <i id="boto_3" class="fa-solid fa-image" onclick="canvia_seccio(3)"></i>
+      <i id="boto_4" class="fa-solid fa-map" onclick="canvia_seccio(4)"></i>
+      <i class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
       <i id="icona_video" class="fa-solid fa-video"></i>
-      <i class="fa-solid fa-right-from-bracket"></i>
     </div>
   </body>
 </html>
