@@ -183,14 +183,14 @@ body {
     cursor: pointer;
 }
 #menu {
-    display: right;
+    display: flex;
     height: 8vmax;
 }
 #menu i{
     flex: 1;
     display: flex;
-    justify-content: right;
-    align-items: right;
+    justify-content: down;
+    align-items: down;
     color: white;
     background-color: #950E17;
     background-color: #000000;
@@ -215,6 +215,8 @@ body {
         flex-direction: row;
     }
     #menu {
+        justify-content: down;
+        align-items: down;
         flex-direction: column;
         width: 8vmax;
         height: auto;    
