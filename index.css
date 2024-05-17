@@ -183,14 +183,14 @@ body {
     cursor: pointer;
 }
 #menu {
-    display: flex;
+    display: right;
     height: 8vmax;
 }
 #menu i{
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
     color: white;
     background-color: #950E17;
     background-color: #000000;
