@@ -156,6 +156,9 @@ body {
 #prediccions {
     font-size: 3vh;
 }
+.ocult {
+    display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
+}
 #menu {
     display: flex;
     height: 8vmax;
