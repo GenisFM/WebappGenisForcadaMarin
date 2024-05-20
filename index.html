@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="ca">
-  <head>
-    <!-- https://teachablemachine.withgoogle.com/models/pR5Em_Kyx/ -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js">    // s'utilitza la IA de TensorFlow </script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script> 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  
+<!DOCTYPE html>    <!-- tipus de document (HTML) -->  
+<html>
+    <html lang="ca">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
-    <link rel="stylesheet" href="index.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <meta name="description" content="Oa esta es la descripció de la wep app">
-    <script src="index.js"></script>
-    <i id="desa" class="fa-solid fa-check" onclick="desa_foto()"></i>
-    <img id="foto" onclick="mostra_foto(0)">
-    <img id="foto_gran" onclick="retorn_a_seccio()" />
-    <title>
-        Wepapp Genis 
+  <head>
+    <meta charset="UTF-8">    <!-- codificació del text (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- adapta la visualització a les mides de la pantalla -->
+    <meta name="description" content="Descripció de la nostra webapp.">    <!-- breu descripció per als cercadors -->
+    <title>    <!-- títol que es visualitza en la part superior del navegador -->
+        Wep app Genís
     </title>
   </head>
   <body>
-    <div id="superior">
-        Webapp 🗣️🔥💯 
-    </div>    
+    <div id="superior">    <!-- franja superior per mostar el nom de la webapp -->
+        Web App 🗣️🔥💯
+    </div>
     <div id="seccio_0" class="seccio">
       <div>
-        Inici de sessió
+        Inici de sessió    <!-- títol de la secció -->
       </div> 
-      <div id="credencials">
+      <div id="credencials">    <!-- contenidor per als quadres de text -->
         <div>
           <label for="nom_usuari">Nom d'usuari</label>
           <input type="text" id="nom_usuari">
@@ -38,61 +30,39 @@
           <input type="password" id="contrasenya">
         </div>
       </div>
-    <div id="botons_sessio">
-      <button onclick="inici_sessio()">Inicia sessió</button>
-      <button onclick="nou_usuari()">Nou usuari</button>       
+      <div id="botons_sessio">    <!-- contenidor per als botons -->
+        <button>Inicia sessió</button>
+        <button>Nou usuari</button>
+      </div>         
     </div>
-    <div id="seccio_1" class="seccio">
+    <div id="seccio_1">    <!-- espai central per mostrar contingut -->
         Lorena la millor programadora
+        (Jaume, fica'm un excelent perfa)
+        (Necesito alimentar a la meva familia)
     </div>
     <div id="seccio_2" class="seccio">
-        Jaume ficam un excelent porfa
-    </div>
-    <div id="seccio_3" class="seccio">
-      <div id="div_foto">
+      <div id="div_foto">    <!-- contenidor de la vista prèvia de la foto feta -->
         <img id="foto">
+        <i id="icona_camera" class="fa-solid fa-image"></i>    <!-- icona que ocupa l'espai quan encara no s'ha fet la foto -->
       </div>
-      <div id="div_control">
-          <label for="obturador">
-            <i class="fa-solid fa-circle-dot"></i>
-          </label>
-          <input type="file" accept="image/*" id="obturador" capture="camera" />
-          <i id="desa" class="fa-solid fa-check"></i>
+      <div id="div_control">    <!-- contenidor dels botons per fer i desar la foto -->
+        <label for="obturador">    <!-- etiqueta auxiliar per ocultar el botó predeterminat -->
+          <i class="fa-solid fa-circle-dot"></i>    <!-- icona del botó per fer la foto -->
+        </label>
+        <input type="file" accept="image/*" id="obturador" capture="camera" /> <!-- element que captura la imatge -->
+        <i id="desa" class="fa-solid fa-check"></i>    <!-- icona del botó per desar la foto -->
       </div>
     </div>
     <canvas id="canvas"></canvas>
-    <div id="div_gran">
-      <img id="foto_gran" />
-    </div>
-    <div id="seccio_4" class="seccio">
-      <div id="llista_titol">
-        <i class="fa-solid fa-image"></i>
-        <i class="fa-solid fa-calendar-days"></i>
-        <i class="fa-solid fa-trash"></i>   
-      </div>
-      <div id="llista_fotos">
-      </div>
-    </div>
-    <div id="seccio_5" class="seccio">
-    </div>
-    <div id="seccio_6" class="seccio">
-      <i id="icona_video" class="fa-solid fa-video" onclick="inicia_video()"></i>
-      <div>
-        <div id="webcam-container"></div>
-      </div>
-      <div id="reconeixement">
-        <div id="coincidencia">COINCIDÈNCIA</div>
-        <div id="prediccions"></div>
-      </div>
+      <div id="div_gran">
+      <img id="foto_gran"/>
     </div>
     <div id="menu">      
-      <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>     
-      <i id="boto_2" class="fa-solid fa-camera" onclick="canvia_seccio(2)"></i>
-      <i id="boto_3" class="fa-solid fa-image" onclick="canvia_seccio(3)"></i>
-      <i id="boto_4" class="fa-solid fa-map" onclick="canvia_seccio(4)"></i>
-      <i id="boto_5" class="fa-solid fa-brain" onclick="canvia_seccio(5)"></i>
-      <i class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
-      <i id="icona_video" class="fa-solid fa-video"></i>
+      <i id="boto_1" class="fa-solid fa-house"></i>    <!-- secció inicial -->     
+      <i id="boto_2" class="fa-solid fa-camera"></i>    <!-- càmera -->
+      <i id="boto_3" class="fa-solid fa-image"></i>     <!-- galeria -->
+      <i id="boto_4" class="fa-solid fa-map"></i>    <!-- mapa -->
+      <i class="fa-solid fa-right-from-bracket"></i>    <!-- tancar sessió -->
     </div>
   </body>
 </html>
