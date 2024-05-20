@@ -49,7 +49,7 @@ function inici_sessio() {
 }
 function inicia_sessio() {
     validat = true;    // usuari validat
-    document.getElementById("seccio_0").style.display = "flex";    // s'oculta la secció de validació d'usuaris
+    document.getElementById("seccio_0").style.display = "none";    // s'oculta la secció de validació d'usuaris
     canvia_seccio(1);    // es mostra la secció 1
 }
 function nou_usuari() {
