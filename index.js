@@ -21,7 +21,7 @@ function canvia_seccio(num_boto) {
         else {
             boto.style.color = "white";    // colors dels botons de seccions inactives
             boto.style.backgroundColor = "#950E17";
-            seccio.style.display = "none";    // s'oculten les seccions inactives
+            seccio.style.display = "flex";    // s'oculten les seccions inactives
         }
     }
 }
