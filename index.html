@@ -9,6 +9,8 @@
     <i id="desa" class="fa-solid fa-check" onclick="desa_foto()"></i>
     <img id="foto" onclick="mostra_foto(0)">
     <img id="foto_gran" onclick="retorn_a_seccio()" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script> 
   <head>
     <meta charset="UTF-8">    <!-- codificació del text (UTF-8) -->
     <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- adapta la visualització a les mides de la pantalla -->
@@ -83,6 +85,7 @@
         <div id="coincidencia">COINCIDÈNCIA</div>
         <div id="prediccions"></div>
       </div>
+      <i id="icona_video" class="fa-solid fa-video" onclick="inicia_video()"></i>
     </div>
     <div id="seccio_6" class="seccio">
       <div id="div_diagrama">    <!-- contenidor del diagrama de línies -->
@@ -97,6 +100,7 @@
       <i id="boto_2" class="fa-solid fa-camera" onclick="canvia_seccio(2)"></i>
       <i id="boto_3" class="fa-solid fa-image" onclick="canvia_seccio(3)"></i>
       <i id="boto_4" class="fa-solid fa-map" onclick="canvia_seccio(4)"></i>
+      <i id="boto_5" class="fa-solid fa-brain" onclick="canvia_seccio(5)"></i>
       <i class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
     </div>
   </body>
