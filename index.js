@@ -1,3 +1,4 @@
+let model, webcam, prediccions, maxPrediccions;
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length;    // el nombre de botons dins de l'element "menu"
@@ -17,6 +18,12 @@ function canvia_seccio(num_boto) {
     }
     if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
     omple_llista();
+    }
+    if (num_boto == 4) {
+        mapa.invalidateSize();
+        if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
+            navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
+        }
     }
 }
 let validat = false;    // variable que permet saber si hi ha algun usuari validat
@@ -105,6 +112,10 @@ window.onload = () => {
             }
         }
     });
+    mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
+    }).addTo(mapa);    // s'afegeix la capa al mapa
 }
 function desa_foto() {
     let nou_registre = {    // contingut del nou registre de la base de dades
@@ -192,5 +203,45 @@ function esborra_foto(id) {
                 canvia_seccio(3);    // es recarrega la galeria per tal que ja no mostri la foto esborrada
             };
         };
+    }
+}
+function geoExit(posicio){
+    let latitud = posicio.coords.latitude;
+    let longitud = posicio.coords.longitude;
+    if (typeof geoID === "undefined") {    
+        geoID = L.marker([latitud, longitud], {zIndexOffset:100, title:"Usuari"}).addTo(mapa);    // es defineix el marcador  geoID i es situa per sobre dels altres
+    } else {    // primeres dades de localització, es crea el marcador d'usuari 
+        geoID.setLatLng([latitud, longitud]);    // actualització de la posició del marcador d'usuari en el mapa
+    }
+}
+async function inicia_video() {
+    const codi_model = "https://teachablemachine.withgoogle.com/models/pR5Em_Kyx/"    // substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
+    const tmURL = "https://teachablemachine.withgoogle.com/models/" + codi_model;
+    const modelURL = tmURL + "/model.json";
+    const metadataURL = tmURL + "/metadata.json";
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPrediccions = model.getTotalClasses();    // nombre de tipus d'imatges per reconèixer
+    webcam = new tmImage.Webcam(300, 300, true);    // posada en marxa de la webcam
+    await webcam.setup();
+    await webcam.play();
+    window.requestAnimationFrame(loop);    // bucle
+    document.getElementById("icona_video").style.display = "none";    // oculta la icona de la càmera de vídeo
+    document.getElementById("coincidencia").style.display = "flex";    // mostra el text amb la predicció de coincidències
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+    prediccions = document.getElementById("prediccions");
+    for (let i = 0; i < maxPrediccions; i++) {
+        prediccions.appendChild(document.createElement("div"));    // es crea un contenidor per a la coincidència de cada tipus d'imatge
+    }
+}
+async function loop() {
+    webcam.update();
+    await prediu();
+    window.requestAnimationFrame(loop);
+}
+async function prediu() {
+    const prediccio = await model.predict(webcam.canvas);
+    for (let i = 0; i < maxPrediccions; i++) {
+        const classe = prediccio[i].className + ": " + prediccio[i].probability.toFixed(2);    // es conserven dues xifres decimals
+        prediccions.childNodes[i].innerHTML = classe;
     }
 }
